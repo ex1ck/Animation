@@ -2,7 +2,6 @@ html {
   height: 100%;
 }
 
-
 .container {
   position: absolute;
   width: auto;
@@ -10,28 +9,6 @@ html {
   margin-top: 10%;
   right: 82px;
   left: 0px;
-}
-
-.ball-container {
-  position: absolute;
-  height: 200px;
-  width: 82px;
-  animation-name: moveit;
-  animation-duration: 8s;
-  animation-direction: alternate;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-.ball {
-  position: absolute;
-  height: 80px;
-  width: 80px;
-  animation-name: bounce, rotating;
-  animation-duration: 0.5s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
-  animation-iteration-count: infinite;
 }
 
 .ball-shadow {
@@ -42,14 +19,86 @@ html {
   background-color: rgba(0, 0, 0, 0.6);
   filter: blur(8px);
   border-radius: 50px;
-  animation-name: scaleit;
-  animation-duration: 0.5s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  animation-name: shadow;
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-timing-function: ease-out;
   animation-iteration-count: infinite;
 }
 
+.ball-container {
+  position: absolute;
+  height: 200px;
+  width: 82px;
+  animation-name: moveit;
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
 
+.ball {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  animation-name: bounce, rotating;
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shadow {
+  0% {
+    transform: scale(0.4, 0.1);
+    opacity: 0.3;
+  }
+
+  10%{
+    transform: scale(1, 0.2);
+  }
+
+  20% {
+    transform: scale(0.5, 0.12);
+    opacity: 0.3;
+  }
+
+  30%{
+    transform: scale(1, 0.2);
+  }
+
+  40% {
+    transform: scale(0.6, 0.14);
+    opacity: 0.3;
+  }
+
+  50%{
+    transform: scale(1, 0.2);
+  }
+
+  60% {
+    transform: scale(0.7, 0.16);
+    opacity: 0.3;
+  }
+
+  70%{
+    transform: scale(1, 0.2);
+  }
+
+  80% {
+    transform: scale(0.8, 0.18);
+    opacity: 0.3;
+  }
+
+  90%{
+    transform: scale(1, 0.2);
+  }
+
+  100% {
+    transform: scale(0.9, 0.19);
+    opacity: 0.3;
+  }
+}
 
 @keyframes moveit {
   0% {
@@ -61,27 +110,62 @@ html {
 }
 
 @keyframes bounce {
+
   0% {
-    top: 0px;
+    top: -50px;
     transform: scale(1, 1);
   }
-  80% {
-    transform: scale(0.85, 1);
-  }
-  100% {
-    top: 120px;
+
+  10%{
+    top: 100px;
     transform: scale(1.2, 0.6);
   }
-}
 
-@keyframes scaleit {
-  0% {
-    transform: scale(0.4, 0.1);
-    opacity: 0.3;
+  20% {
+    top:-10px;
+    transform: scale(1, 1);
   }
+
+  30%{
+    top: 100px;
+    transform: scale(1.15, 0.65);
+  }
+
+  40% {
+    top: 10px;
+    transform: scale(1, 1);
+  }
+
+  50%{
+    top: 100px;
+    transform: scale(1.1, 0.7);
+  }
+
+  60% {
+    top: 40px;
+    transform: scale(1, 1);
+  }
+
+  70%{
+    top: 100px;
+    transform: scale(1.05, 0.75);
+  }
+
+  80% {
+    top: 70px;
+    transform: scale(1, 1);
+  }
+
+  90% {
+    top: 100px;
+    transform: scale(1.02, 0.8);
+  }
+
   100% {
-    transform: scale(1, 0.2);
+    top: 80px;
+    transform: scale(1.01, 0.85);
   }
+
 }
 
 @keyframes rotating {
@@ -89,7 +173,6 @@ html {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(720deg);
   }
 }
-
