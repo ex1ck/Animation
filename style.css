@@ -27,7 +27,7 @@ html {
   position: absolute;
   height: 80px;
   width: 80px;
-  animation-name: bounce;
+  animation-name: bounce, rotating;
   animation-duration: 0.5s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
@@ -81,6 +81,15 @@ html {
   }
   100% {
     transform: scale(1, 0.2);
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
